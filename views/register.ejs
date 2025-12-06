@@ -1,0 +1,62 @@
+<%- include('partials/header') %>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <div class="card border-0 shadow-sm rounded-lg">
+                <div class="card-body p-5">
+                    <h3 class="text-center text-pink fw-bold mb-4">Sign Up</h3>
+                    
+                    <% if (typeof error !== 'undefined' && error) { %>
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <%= error %>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        </div>
+                    <% } %>
+
+                    <form action="/auth/register" method="POST">
+                        <!-- Full Name -->
+                        <div class="mb-3">
+                            <label for="fullName" class="form-label text-secondary fw-500">Full Name *</label>
+                            <input type="text" class="form-control form-control-lg border-light-pink" 
+                                   id="fullName" name="fullName" required placeholder="Enter your full name">
+                        </div>
+
+                        <!-- Username -->
+                        <div class="mb-3">
+                            <label for="username" class="form-label text-secondary fw-500">Username *</label>
+                            <input type="text" class="form-control form-control-lg border-light-pink" 
+                                   id="username" name="username" required placeholder="Choose a username">
+                        </div>
+
+                        <!-- Email -->
+                        <div class="mb-3">
+                            <label for="email" class="form-label text-secondary fw-500">Email *</label>
+                            <input type="email" class="form-control form-control-lg border-light-pink" 
+                                   id="email" name="email" required placeholder="Enter your email">
+                        </div>
+
+                        <!-- Password -->
+                        <div class="mb-4">
+                            <label for="password" class="form-label text-secondary fw-500">Password *</label>
+                            <input type="password" class="form-control form-control-lg border-light-pink" 
+                                   id="password" name="password" required placeholder="Create a password (min 6 chars)">
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn btn-pink btn-lg w-100 fw-semibold mb-3">
+                            Create Account
+                        </button>
+                    </form>
+
+                    <!-- Login Link -->
+                    <p class="text-center text-muted">
+                        Already have an account? <a href="/auth/login" class="text-pink fw-semibold">Login here</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer') %>

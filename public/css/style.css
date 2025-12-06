@@ -1,0 +1,660 @@
+/* ==========================================
+   BLOGHUB - PINK THEME STYLESHEET
+   ========================================== */
+
+/* Color Variables */
+:root {
+    --pink-primary: #FF69B4;
+    --pink-light: #FFE4E1;
+    --pink-lighter: #FFF0F3;
+    --pink-dark: #E91E63;
+    --gray-dark: #2C3E50;
+    --gray-light: #ECF0F1;
+    --text-primary: #2C3E50;
+    --text-muted: #7F8C8D;
+    --border-color: #F0F0F0;
+    --success: #27AE60;
+    --danger: #E74C3C;
+}
+
+/* ==========================================
+   GLOBAL STYLES
+   ========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', 'Inter', sans-serif;
+    background-color: #FAFAFA;
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+/* ==========================================
+   TYPOGRAPHY
+   ========================================== */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+a {
+    color: var(--pink-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--pink-dark);
+    text-decoration: none;
+}
+
+p {
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+/* ==========================================
+   COLOR UTILITIES
+   ========================================== */
+
+.text-pink {
+    color: var(--pink-primary) !important;
+}
+
+.bg-light-pink {
+    background-color: var(--pink-light) !important;
+}
+
+.bg-pink {
+    background-color: var(--pink-primary) !important;
+}
+
+.border-light-pink {
+    border-color: var(--pink-light) !important;
+}
+
+.border-pink {
+    border-color: var(--pink-primary) !important;
+}
+
+/* ==========================================
+   BUTTONS
+   ========================================== */
+
+.btn-pink {
+    background-color: var(--pink-primary);
+    border-color: var(--pink-primary);
+    color: white;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+
+.btn-pink:hover {
+    background-color: var(--pink-dark);
+    border-color: var(--pink-dark);
+    color: white;
+    box-shadow: 0 6px 20px rgba(255, 105, 180, 0.3);
+    transform: translateY(-2px);
+}
+
+.btn-pink:active,
+.btn-pink:focus {
+    background-color: var(--pink-dark) !important;
+    border-color: var(--pink-dark) !important;
+}
+
+.btn-outline-pink {
+    color: var(--pink-primary);
+    border: 2px solid var(--pink-primary);
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-pink:hover {
+    background-color: var(--pink-primary);
+    border-color: var(--pink-primary);
+    color: white;
+    box-shadow: 0 6px 20px rgba(255, 105, 180, 0.2);
+}
+
+.btn-outline-pink:focus {
+    box-shadow: 0 0 0 0.25rem rgba(255, 105, 180, 0.25);
+}
+
+.btn-outline-secondary:hover {
+    background-color: var(--gray-light);
+    border-color: var(--gray-dark);
+    color: var(--text-primary);
+}
+
+/* Button Sizes */
+.btn-lg {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+}
+
+.btn-sm {
+    border-radius: 6px;
+}
+
+/* ==========================================
+   FORMS & INPUTS
+   ========================================== */
+
+.form-control,
+.form-select,
+textarea {
+    border: 1.5px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus,
+textarea:focus {
+    border-color: var(--pink-primary);
+    box-shadow: 0 0 0 0.2rem rgba(255, 105, 180, 0.15);
+    outline: none;
+}
+
+.form-control-lg,
+.form-select-lg {
+    border-radius: 8px;
+    padding: 0.875rem 1.125rem;
+}
+
+.form-label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.border-light-pink {
+    border-color: var(--pink-light) !important;
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+
+/* ==========================================
+   NAVBAR
+   ========================================== */
+
+.navbar {
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    color: var(--pink-primary) !important;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.navbar-brand:hover {
+    color: var(--pink-dark) !important;
+}
+
+.navbar .dropdown-menu {
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.navbar .dropdown-item {
+    color: var(--text-primary);
+    font-weight: 500;
+    padding: 0.75rem 1.25rem;
+    transition: all 0.2s ease;
+}
+
+.navbar .dropdown-item:hover {
+    background-color: var(--pink-lighter);
+    color: var(--pink-primary);
+}
+
+.navbar .dropdown-item.text-danger:hover {
+    background-color: #FADBD8;
+}
+
+/* ==========================================
+   CARDS
+   ========================================== */
+
+.card {
+    border: none;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.card {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+/* Hover Effect for Post Cards */
+.hover-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(255, 105, 180, 0.15);
+}
+
+.rounded-lg {
+    border-radius: 12px;
+}
+
+/* ==========================================
+   PROFILE SECTION
+   ========================================== */
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--pink-light);
+    flex-shrink: 0;
+}
+
+.profile-stats {
+    display: flex;
+    gap: 2rem;
+    margin: 1.5rem 0;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--pink-primary);
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+/* ==========================================
+   GRID LAYOUT
+   ========================================== */
+
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.post-card {
+    border-radius: 12px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.post-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(255, 105, 180, 0.15);
+}
+
+.post-image {
+    height: 250px;
+    overflow: hidden;
+    background-color: var(--pink-light);
+}
+
+.post-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.post-card:hover .post-image img {
+    transform: scale(1.05);
+}
+
+/* ==========================================
+   ALERTS & MESSAGES
+   ========================================== */
+
+.alert {
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    animation: slideDown 0.3s ease;
+}
+
+.alert-danger {
+    background-color: #FADBD8;
+    color: #C0392B;
+}
+
+.alert-success {
+    background-color: #D5F4E6;
+    color: #27AE60;
+}
+
+.alert-info {
+    background-color: #D6EAF8;
+    color: #1F618D;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+
+footer {
+    background-color: white;
+    border-top: 1px solid var(--border-color);
+    margin-top: 3rem;
+}
+
+footer h5,
+footer h6 {
+    color: var(--pink-primary);
+    font-weight: 700;
+}
+
+footer a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--pink-primary);
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+
+/* Tablets (768px and up) */
+@media (max-width: 768px) {
+    .navbar-collapse {
+        margin-top: 1rem;
+    }
+
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .posts-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+
+    .profile-stats {
+        justify-content: space-around;
+        gap: 1rem;
+    }
+
+    .card-body {
+        padding: 1.25rem;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+    }
+}
+
+/* Mobile (576px and down) */
+@media (max-width: 576px) {
+    :root {
+        --spacing-unit: 0.75rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.25rem;
+    }
+
+    .btn-lg {
+        padding: 0.625rem 1.25rem;
+        font-size: 0.95rem;
+    }
+
+    .posts-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .card {
+        border-radius: 8px;
+    }
+
+    .card-body {
+        padding: 1rem;
+    }
+
+    .profile-img {
+        width: 100px;
+        height: 100px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+    }
+
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .form-control,
+    .form-select,
+    textarea {
+        font-size: 16px; /* Prevents zoom on mobile */
+    }
+}
+
+/* ==========================================
+   UTILITY CLASSES
+   ========================================== */
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.fw-semibold {
+    font-weight: 600;
+}
+
+.sticky-md-top {
+    position: sticky;
+    top: 80px;
+}
+
+.gap-3 {
+    gap: 1rem;
+}
+
+.transition-all {
+    transition: all 0.3s ease;
+}
+
+/* Loading Animation */
+.spinner-border {
+    color: var(--pink-primary);
+}
+
+/* ==========================================
+   IMAGE PREVIEW
+   ========================================== */
+
+#imagePreview,
+#previewImage {
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.post-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--pink-light);
+}
+
+/* ==========================================
+   SCROLLBAR STYLING
+   ========================================== */
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--gray-light);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--pink-primary);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--pink-dark);
+}
+
+/* ==========================================
+   CUSTOM ANIMATIONS
+   ========================================== */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* ==========================================
+   ACCESSIBILITY
+   ========================================== */
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Focus visible for keyboard navigation */
+:focus-visible {
+    outline: 2px solid var(--pink-primary);
+    outline-offset: 2px;
+}
+
+/* ==========================================
+   PRINT STYLES
+   ========================================== */
+
+@media print {
+    .navbar,
+    .footer,
+    .btn {
+        display: none;
+    }
+
+    body {
+        background-color: white;
+    }
+}

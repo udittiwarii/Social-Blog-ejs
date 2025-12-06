@@ -1,0 +1,93 @@
+<%- include('partials/header') %>
+
+<div class="container mt-5 mb-5">
+    <div class="row justify-content-center">
+        <div class="col-md-7">
+            <div class="card border-0 shadow-sm rounded-lg">
+                <div class="card-body p-5">
+                    <h3 class="text-center text-pink fw-bold mb-4">
+                        <i class="bi bi-pencil-square"></i> Create a New Post
+                    </h3>
+
+                    <% if (typeof error !== 'undefined' && error) { %>
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <%= error %>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        </div>
+                    <% } %>
+
+                    <form action="/posts/create" method="POST" enctype="multipart/form-data" id="composeForm">
+                        <!-- Title -->
+                        <div class="mb-4">
+                            <label for="title" class="form-label text-secondary fw-500">Post Title *</label>
+                            <input type="text" class="form-control form-control-lg border-light-pink" 
+                                   id="title" name="title" required placeholder="What's on your mind?" maxlength="200">
+                            <small class="text-muted">Max 200 characters</small>
+                        </div>
+
+                        <!-- Content -->
+                        <div class="mb-4">
+                            <label for="content" class="form-label text-secondary fw-500">Write Something *</label>
+                            <textarea name="content" id="content" class="form-control form-control-lg border-light-pink" 
+                                      rows="6" required placeholder="Share your thoughts..."></textarea>
+                        </div>
+
+                        <!-- Image Upload -->
+                        <div class="mb-4">
+                            <label for="image" class="form-label text-secondary fw-500">Upload Image (Optional)</label>
+                            <input type="file" name="image" id="image" class="form-control form-control-lg border-light-pink" 
+                                   accept="image/jpeg,image/png,image/gif,image/webp" onchange="previewImage(event)">
+                            <small class="text-muted">Supported: JPG, PNG, GIF, WebP (Max 5MB)</small>
+                            
+                            <!-- Image Preview -->
+                            <div id="imagePreviewContainer" class="mt-3" style="display: none;">
+                                <img id="imagePreview" class="img-fluid rounded" 
+                                     style="max-height: 300px; width: 100%; object-fit: cover;">
+                                <button type="button" class="btn btn-sm btn-danger mt-2" 
+                                        onclick="removeImage()" title="Remove image">
+                                    <i class="bi bi-trash"></i> Remove
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Buttons -->
+                        <div class="d-flex gap-2">
+                            <button type="submit" class="btn btn-pink btn-lg flex-grow-1 fw-semibold">
+                                <i class="bi bi-upload"></i> Publish Post
+                            </button>
+                            <a href="/" class="btn btn-outline-secondary btn-lg">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function previewImage(event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById('imagePreview').src = e.target.result;
+                document.getElementById('imagePreviewContainer').style.display = 'block';
+            };
+            reader.readAsDataURL(file);
+        }
+    }
+
+    function removeImage() {
+        document.getElementById('image').value = '';
+        document.getElementById('imagePreviewContainer').style.display = 'none';
+    }
+
+    // Prevent form submission with Enter key in textarea
+    document.getElementById('content').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+        }
+    });
+</script>
+
+<%- include('partials/footer') %>
